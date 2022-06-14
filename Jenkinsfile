@@ -9,13 +9,13 @@ node ('master'){
 		}
         stage ('Post-to-Dockerhub') {
              //sh "echo post-to-dockerhub"
-		docker.withRegistry('https://registry.hub.docker.com', 'DockerHub_Credentials'){
+		docker.withRegistry('https://registry.hub.docker.com', 'DockerHub'){
                 app.push("latest")
 		}
 	    }
         stage ('Pull-image-server') {
              //sh "echo Pull-image-server"
              sh "docker-compose down"
-             sh "docker-compose upd -d"
+             sh "docker-compose up -d"
 	    }
 }
