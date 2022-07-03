@@ -1,5 +1,5 @@
 node ('master'){
-  def app
+  //def app
         stage ('Cloning Git') {
              checkout scm
 		}
@@ -11,7 +11,7 @@ node ('master'){
              sh "echo post-to-dockerhub"
 		//docker.withRegistry('https://registry.hub.docker.com', 'DockerHub'){
                // app.push("latest")
-		}
+		//}
 	    }
         stage ('Pull-image-server') {
              sh "echo Pull-image-server"
