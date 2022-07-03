@@ -1,4 +1,4 @@
-node (){
+node ('master'){
   def app
         stage ('Cloning Git') {
              checkout scm
